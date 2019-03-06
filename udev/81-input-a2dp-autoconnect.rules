@@ -1,0 +1,1 @@
+SUBSYSTEM=="input", RUN+="/bin/sh -c '/home/pi/pipod/a2dp-autoconnect'" OPTIONS="last_rule"
