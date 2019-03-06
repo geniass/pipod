@@ -1,10 +1,21 @@
 #!/bin/bash
 set -eu
 
+# Install the kernel modules
 cp install_files/ipod-gadget/*.ko /lib/modules/$(uname -r)/
+# TODO: bring this back once DKMS is done
+# modules='g_ipod_hid
+# g_ipod_gadget
+# g_ipod_audio
+# '
+# echo "$modules" >> /etc/modules
+
+# Install the userspace component and service
 cp install_files/ipod /usr/local/bin/
 cp start-ipod.sh /usr/local/bin/
 cp ipod.service /etc/systemd/system/
+systemctl enable ipod
+
 
 ##
 # Based on https://gist.github.com/oleq/24e09112b07464acbda1

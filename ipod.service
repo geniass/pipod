@@ -3,8 +3,7 @@ Description=Crapple imposter
 
 [Service]
 Type=simple
-ExecStart=/root/ipod-gadget/start.sh
-ExecStartPost=/bin/sh -c "sleep 10; aplay -D plughw:CARD=iPodUSB,DEV=0 /home/pi/thunderstruck.wav"
+ExecStart=/usr/local/bin/start-ipod.sh
 
 [Install]
 WantedBy=multi-user.target

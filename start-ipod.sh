@@ -9,6 +9,6 @@ modprobe g_ipod_audio
 modprobe g_ipod_hid
 modprobe g_ipod_gadget
 
-systemctl start ipod
+mkdir -p /var/log/ipod
 
-exec ipod -d serve /dev/iap0
+exec ipod -d serve -w /var/log/ipod/$(date -Iseconds).trace /dev/iap0
