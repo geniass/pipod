@@ -4,6 +4,7 @@ Description=Crapple imposter
 [Service]
 Type=simple
 ExecStart=/usr/local/bin/start-ipod.sh
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
