@@ -28,7 +28,7 @@ usermod -a -G lp pi
 # configure pulseaudio
 # TODO: look at other resampling methods
 # TODO: apparently in Pulseaudio 11 you can bypass resampling completely when the 2 sample rates are the same
-pulseconfig='resample-method=speex-fixed-3
+pulseconfig='resample-method=speex-fixed-6
 enable-remixing = no
 enable-lfe-remixing = no
 default-sample-format = s16le
@@ -37,6 +37,14 @@ default-sample-channels = 2
 exit-idle-time = -1
 '
 echo "$pulseconfig" >> /etc/pulse/daemon.conf
+
+mkdir -p /home/pi/.config/pulse
+cp pulseaudio/default.pa /home/pi/.config/pulse/
+mkdir -p /home/pi/.config/systemd/user
+cp pulseaudio/pulseaudio.service /home/pi/.config/systemd/user/
+chown -R pi:pi /home/pi/.config
+sudo -u pi systemctl --user enable pulseaudio
+loginctl enable-linger pi
 
 # configure bluetooth
 bluetoothaudioconfig='[General]

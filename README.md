@@ -19,13 +19,12 @@ Tested on:
 4.  compile the kernel modules (ipod-gadget directory) and put the .ko files in install_files
 5.  copy the pipod directory to the Pi
 6.  run `sudo ./install.sh`
-7.  add `pulseaudio --start` to ~/.bashrc
-8.  [enable auto login](https://gist.github.com/oleq/24e09112b07464acbda1#autologin) so that Pulseaudio can start automatically
-9.  edit the file `a2dp-autoconnect`.
+7.  [enable auto login](https://gist.github.com/oleq/24e09112b07464acbda1#autologin) so that Pulseaudio can start automatically
+8.  edit the file `a2dp-autoconnect`.
 Replace the `NAME` variable with your bluetooth device's MAC address.
 Also make sure that if you run `pactl list sources short`, the value of `$PA_SINK` shows up in the output.
-10.  [Pair and trust](https://gist.github.com/oleq/24e09112b07464acbda1#setup-bluetooth) your bluetooth device
-11.  Reboot, connect everything (USB to car; manually connect phone via bluetooth) and test!
+9.  [Pair and trust](https://gist.github.com/oleq/24e09112b07464acbda1#setup-bluetooth) your bluetooth device
+10.  Reboot, connect everything (USB to car; manually connect phone via bluetooth) and test!
 
 
 ## TODO:

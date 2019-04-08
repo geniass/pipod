@@ -1,0 +1,4 @@
+.include /etc/pulse/default.pa
+
+set-default-sink alsa_output.platform-snd_usb_ipod.analog-stereo
+load-module module-switch-on-connect

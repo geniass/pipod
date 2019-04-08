@@ -1,0 +1,11 @@
+[Unit]
+Description=PulseAudio Sound System
+Before=sound.target
+
+[Service]
+ExecStart=/usr/bin/pulseaudio -vvv --log-target=journal
+Restart=always
+
+[Install]
+WantedBy=default.target
+
